@@ -40,8 +40,8 @@ public class SpringcloudFeignConsumerApplication {
 #### 3.3  配置 application.properties
 ```properties
 spring.application.name=feign-consumer
-server.port=8095
-eureka.client.service-url.defaultZone=http://localhost:7080/eureka/
+server.port=9001
+eureka.client.service-url.defaultZone=http://localhost:1111/eureka/
 ```
 
 #### 3.4  编写HelloService接口类 来声明服务
