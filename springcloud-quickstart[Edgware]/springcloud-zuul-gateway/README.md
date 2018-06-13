@@ -8,7 +8,20 @@
 * SpringCloud:Edgware.SR3
 
 ### 配置实现
-#### 3.1 启动类增加注解支持
+#### 3.1 pom.xml配置支持Zuul
+```xml
+<dependency>
+    <groupId>org.springframework.cloud</groupId>
+    <artifactId>spring-cloud-starter-zuul</artifactId>
+</dependency>
+<dependency>
+	<groupId>org.springframework.cloud</groupId>
+	<artifactId>spring-cloud-starter-eureka</artifactId>
+</dependency>
+```
+
+
+#### 3.2 启动类增加注解支持
 ```java
 @EnableZuulProxy
 @SpringCloudApplication
@@ -18,7 +31,7 @@ public class SpringcloudZuulGatewayApplication {
 	}
 }
 ```
-#### 3.2 增加配置 application.yml
+#### 3.3 增加配置 application.yml
 ```yaml
 server:
   port: 5555
