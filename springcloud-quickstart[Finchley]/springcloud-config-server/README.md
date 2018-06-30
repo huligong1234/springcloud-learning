@@ -4,7 +4,7 @@
 
 ### 二、依赖版本信息
 * JDK1.8
-* SpringBoot:2.1.0.BUILD-SNAPSHO
+* SpringBoot:2.1.0.BUILD-SNAPSHOT
 * SpringCloud:Finchley.BUILD-SNAPSHOT
 
 ### 三、配置实现
