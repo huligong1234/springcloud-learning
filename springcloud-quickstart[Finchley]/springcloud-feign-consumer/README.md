@@ -89,6 +89,6 @@ public class ConsumerController {
 * 访问 http://localhost:1111/ 服务注册中心，查看相关服务是否已注册
 
 ### 五、测试
-* 启动 Application (springcloud-eureka-client)
+* 启动 Application (springcloud-feign-consumer)
 * 访问 http://localhost:1111/ 服务注册中心，查看feign-consumer服务是否已注册
 * 访问 服务接口 http://localhost:9001/feign-consumer 正确返回“Hello World”内容即为成功
