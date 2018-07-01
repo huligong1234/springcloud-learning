@@ -19,7 +19,9 @@ Finchley builds and works with Spring Boot 2.0.x, and is not expected to work wi
 
 * springcloud-feign-consumer 服务消费--声明式服务调用
 
-* springcloud-zuul-gateway API网关服务
+* springcloud-zuul-gateway 基于Zuul的API网关路由服务
+
+* springcloud-gateway 基于spring-cloud-gateway的 API网关路由服务
 
   
 
@@ -34,6 +36,8 @@ Finchley builds and works with Spring Boot 2.0.x, and is not expected to work wi
 * springcloud-consul-client 服务提供者(基于Consul服务注册中心)
 
 * springcloud-feign-consumer-consul  服务消费 Feign方式 (基于Consul服务注册中心)
+
+  
 
   
 

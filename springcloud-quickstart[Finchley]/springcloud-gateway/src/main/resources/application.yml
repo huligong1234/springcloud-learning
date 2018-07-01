@@ -1,0 +1,29 @@
+server:
+  port: 5555
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:1111/eureka/
+
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    gateway: 
+      #locator:
+       # enabled: true
+      routes:
+      - id: hello-service
+        uri: lb://hello-service
+        #uri: http://localhost:8080
+        predicates:
+        - Path=/api-a/**
+        filters:
+        - StripPrefix=1
+      - id: feign-consumer
+        uri: lb://feign-consumer
+        predicates:
+        - Path=/api-b/**
+        filters:
+        - StripPrefix=1
