@@ -1,6 +1,7 @@
 ## 服务治理组件-API网关服务  Spring Cloud Gateway 示例学习
 
 ### 一、概述
+* 官方文档：http://cloud.spring.io/spring-cloud-gateway/single/spring-cloud-gateway.html
 
 ### 二、依赖版本信息
 * JDK1.8
@@ -105,3 +106,6 @@ public class RouteConfiguration {
 * 访问 http://localhost:5555/api-b/feign-consumer  正确返回“Hello World”内容即为成功
 * 访问 http://localhost:5555/api-c/hello  正确返回“Hello World”内容即为成功
 * 访问 http://localhost:5555/api-d/feign-consumer  正确返回“Hello World”内容即为成功
+
+### 相关资料
+* Spring Cloud Gateway 入门  https://juejin.im/post/5aa4eacbf265da237a4ca36f
