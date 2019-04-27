@@ -1,0 +1,25 @@
+server:
+  port: 8080
+spring:
+  application:
+    name: spring-cloud-stream
+  cloud:
+    stream:
+      defaultBinder: defaultRabbit
+      bindings: 
+        inputContent:
+          destination: myExchange01     # 对应 MQ Exchange
+          group: myQueue01              # 对应 MQ Queue
+        outputContent:
+          destination: myExchange01
+      binders:
+        defaultRabbit:
+          type: rabbit
+          environment:
+            spring:
+              rabbitmq:
+                host: localhost
+                port: 5672
+                username: guest
+                password: guest
+                virtual-host: /
