@@ -1,0 +1,62 @@
+server:
+  port: 2003
+spring:
+  application:
+    name: seata-order
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+        namespace: "public"
+        group: SEATA_GROUP
+      config:
+        server-addr: ${spring.cloud.nacos.discovery.server-addr}
+        file-extension: yaml
+  datasource:
+    type: com.alibaba.druid.pool.DruidDataSource
+    jdbcUrl: jdbc:mysql://localhost:3306/seata_order?useUnicode=true&characterEncoding=utf8&useSSL=false&serverTimezone=Asia/Shanghai&autoReconnect=true
+    url: ${spring.datasource.jdbcUrl}
+    driverClassName: com.mysql.cj.jdbc.Driver
+    username: root
+    password: 123456
+
+mybatis:
+  config-location: classpath:mybatis/mybatis-config.xml
+
+mybatis-plus:
+  mapper-locations: classpath:mybatis/mapper/*Mapper.xml
+  configuration:
+    map-underscore-to-camel-case: true
+    cache-enabled: false
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#Seata分布式事务配置(AT模式)
+seata:
+  enabled: true
+  application-id: ${spring.application.name}
+  #客户端和服务端在同一个事务组
+  tx-service-group: seata-order
+  enable-auto-data-source-proxy: true
+  service:
+    vgroup-mapping:
+      seata-order: default
+  config:
+    type: nacos
+    nacos:
+      namespace: "public"
+      serverAddr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      data-id: seataServer.properties
+      #username: "nacos"
+      #password: "nacos"
+  #服务注册到nacos
+  registry:
+    type: nacos
+    nacos:
+      application: seata-server
+      server-addr: 127.0.0.1:8848
+      group: SEATA_GROUP
+      namespace: "public"
+      #username: "nacos"
+      #password: "nacos"
+      cluster: default

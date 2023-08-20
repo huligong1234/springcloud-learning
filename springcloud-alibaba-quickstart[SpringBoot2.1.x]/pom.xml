@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.jeedevframework.springcloud</groupId>
+    <artifactId>springcloud-alibaba-quickstart</artifactId>
+    <version>0.0.1-SNAPSHOT</version>
+    <packaging>pom</packaging>
+    <name>springcloud-alibaba-quickstart</name>
+    <description>Spring Cloud Learning Alibaba Notes</description>
+
+    <modules>
+        <module>springcloud-hello-service</module>
+        <module>springcloud-ribbon-consumer</module>
+        <module>springcloud-sentinel-consumer</module>
+        <module>springcloud-feign-consumer</module>
+        <module>springcloud-gateway</module>
+        <module>springcloud-config-client</module>
+		<module>springcloud-skywalking-consumer</module>
+		<module>springcloud-seata-account</module>
+		<module>springcloud-seata-storage</module>
+		<module>springcloud-seata-order</module>
+        <module>springcloud-stream-rabbitmq</module>
+        <module>springcloud-stream-rocketmq</module>
+    </modules>
+</project>

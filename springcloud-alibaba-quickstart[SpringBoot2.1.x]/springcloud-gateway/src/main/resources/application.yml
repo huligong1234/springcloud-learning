@@ -1,0 +1,27 @@
+server:
+  port: 5555
+
+spring:
+  application:
+    name: springcloud-gateway
+  cloud:
+    nacos:
+      discovery:
+        server-addr=127.0.0.1:8848:
+    gateway:
+      #locator:
+       # enabled: true
+      routes:
+      - id: hello-service
+        uri: lb://hello-service
+        #uri: http://localhost:8080
+        predicates:
+        - Path=/api-a/**
+        filters:
+        - StripPrefix=1
+      - id: feign-consumer
+        uri: lb://feign-consumer
+        predicates:
+        - Path=/api-b/**
+        filters:
+        - StripPrefix=1

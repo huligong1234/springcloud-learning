@@ -1,2 +1,13 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+target
+.idea
+*.iml
+*.log
+
+.classpath
+.project
+/.settings/
+/*/.classpath
+/*/.project
+/*/.settings/

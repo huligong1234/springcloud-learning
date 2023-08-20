@@ -1,0 +1,19 @@
+server:
+  port: 8087
+spring:
+  application:
+    name: spring-cloud-stream-rocketmq
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+  cloud:
+    stream:
+      bindings:
+        inputContent:
+          destination: test01
+          group: testgroup
+        outputContent:
+          destination: test01
+      rocketmq:
+        binder:
+          name-server: 127.0.0.1:9876
